@@ -23,7 +23,6 @@ print('-----Der düstere Wald-----\nDies ist eine Text basierte Adventuremap\n'
 name = input('Als erstes gib doch bitte deinen Namen ein: ')
 print(f'Dein Name lautet nun {name} \n')
 
-gameover = False
 key = False
 spellbook = False
 whisper = False
