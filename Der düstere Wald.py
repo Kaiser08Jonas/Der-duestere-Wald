@@ -21,7 +21,8 @@ print('-----Der düstere Wald-----\nDies ist eine Text basierte Adventuremap\n'
       f'Ansonsten viel Spaß\n'
       f'')
 name = input('Als erstes gib doch bitte deinen Namen ein: ')
-print(f'Dein Name lautet nun {name} \n')
+coloured_name = '\033[36m' + name + '\033[0m'
+print(f'Dein Name lautet nun {coloured_name} \n')
 
 key = False
 spellbook = False
@@ -61,7 +62,7 @@ def the_big_tree():
         hut()
     elif answer == 'tiefer in den Wald':
         print()
-        print(f'"Ich will tiefer in den Wald gehen!" sagte {name} entschlossen und ging los.')
+        print(f'"Ich will tiefer in den Wald gehen!" sagte {coloured_name} entschlossen und ging los.')
         forest()
     else:
         print()
@@ -102,7 +103,7 @@ def hut():
             print('"Ich bekomme sie nicht auf. Vermutlich brauche ich einen Schlüssel. Wo bekomme ich nur einen her?"\n'
                   '"Am besten gehe Ich zurück"')
             print(input('Zum zurück gehen beliebige Taste eingeben:'))
-            print(f'{name} geht zurück zu dem Ort an dem er aufgewacht ist')
+            print(f'{coloured_name} geht zurück zu dem Ort an dem er aufgewacht ist')
             the_big_tree()
     elif answer == 'außen anschauen':
         print()
@@ -129,7 +130,7 @@ def inside_hut():
     coloured_kueche = '\033[94m' + 'Küche' + '\033[0m'
     coloured_badezimmer = '\033[94m' + 'Badezimmer' + '\033[0m'
     # In der Hütte
-    print(f'{name} geht in die Hütte. Es gibt dort nur drei Räume.\n'
+    print(f'{coloured_name} geht in die Hütte. Es gibt dort nur drei Räume.\n'
           f'Ein {coloured_schlafzimmer}, eine {coloured_kueche} und ein {coloured_badezimmer}. "Wohin soll ich nur gehen?"\n'
           f'"Ich könnte auch {coloured_zurueck}')
     answer = input('>')
@@ -138,16 +139,16 @@ def inside_hut():
         print(f'"Bis auf einem Teppich und ein Bett ist der Raum vollkommen leer."\n'
               f'"Beim Bett konnte ich nichts finden, was irgend eine Bedeutung haben könnte"\n'
               f'"Mal sehen, ob es beim Teppich etwas zu finden gibt"\n'
-              f'{name} findet auf den ersten blick nichts, doch als er gehen wollte rutschte der Teppich etwas\n'
-              f'zur seite und {name} sah einen kleinen Spalt im Boden.\n'
+              f'{coloured_name} findet auf den ersten blick nichts, doch als er gehen wollte rutschte der Teppich etwas\n'
+              f'zur seite und {coloured_name} sah einen kleinen Spalt im Boden.\n'
               f'"Unter dem Teppich befindet sich eine Luke"\n'
-              f'Als {name} die Luke öffnet, ist dort nur ein Loch nach unten. Doch plötzlich kommen dort Stufen aus der Wand gefahren\n'
+              f'Als {coloured_name} die Luke öffnet, ist dort nur ein Loch nach unten. Doch plötzlich kommen dort Stufen aus der Wand gefahren\n'
               f'"Soll ich nach unten gehen?" ({coloured_ja} oder {coloured_zurueck})')
         answer = input('>')
         if answer == 'Ja':
             print()
             print(f'"Ich gehe wohl nach unten"\n'
-                  f'{name} wagt sich die Stufen hinunter ins ungewisse')
+                  f'{coloured_name} wagt sich die Stufen hinunter ins ungewisse')
             get_spellbook()
         elif answer == 'zurück gehen':
             print()
@@ -183,7 +184,7 @@ def get_spellbook():
     global spellbook
     coloured_mitnehmen = '\033[94m' + 'mitnehmen' + '\033[0m'
     coloured_dalassen = '\033[94m' + 'dalassen' + '\033[0m'
-    print(f'Am ender der Stufen geht {name} um eine Ecke.')
+    print(f'Am ender der Stufen geht {coloured_name} um eine Ecke.')
     if not spellbook:
         print(f'"Ein geheimer Raum in dessen Mitte ein Podest mir einem merkwürdigen Buch steht"\n'
               f'"Es ist in einer Sprache verfasst, die ich noch nie zuvor gesehen habe"\n'
@@ -287,12 +288,12 @@ def cave():
         answer = input('>')
         if answer == 'vorbei schleichen':
             print()
-            print(f'{name} versucht sich an dem Bären vorbei zu schleichen. Sollte {name} nur einen falschen schritt machen, könnte es den Bären aufwecken\n'
-                  f'{name} stolpert und fällt hin. "Aaaaahhhh!!!" Durch diesen lauten Schrei wacht der Bär auf und fängt an auf dich zu zu laufen. ({coloured_laufen} oder {coloured_toeten})')
+            print(f'{coloured_name} versucht sich an dem Bären vorbei zu schleichen. Sollte {coloured_name} nur einen falschen schritt machen, könnte es den Bären aufwecken\n'
+                  f'{coloured_name} stolpert und fällt hin. "Aaaaahhhh!!!" Durch diesen lauten Schrei wacht der Bär auf und fängt an auf dich zu zu laufen. ({coloured_laufen} oder {coloured_toeten})')
             answer = input('>')
             if answer == 'laufen':
                 print()
-                print(f'{name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf. Bis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
+                print(f'{coloured_name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf. Bis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
                       f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung erklimmen und dich so vor dem Bären in sicherheit bringen.\n'
                       f'"Das war aber knapp!" Du legst dich auf den Boden und atmest tief durch. Dann gehst du weiter durch die Höhle.')
                 behind_the_cave = True
@@ -304,7 +305,7 @@ def cave():
                 death()
         elif answer == 'laufe':
             print()
-            print(f'{name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf. Bis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
+            print(f'{coloured_name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf. Bis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
                   f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung erklimmen und dich so vor dem Bären in sicherheit bringen.\n'
                   f'"Das war aber knapp!" Du legst dich auf den Boden und atmest tief durch. Dann gehst du weiter durch die Höhle.')
             behind_the_cave = True
@@ -371,7 +372,6 @@ def black_tower():
               f'Als du dich dazu überwinden konntest daran zu klopfen geht die Tür einen Spalt auf.')
         print(f'[{coloured_name_Mage}] "Ich bin der Zauberer Odiwandius. Was haben Sie hier an meinem heiligen Ort zu suchen?')
         print('"Ich will nur einen Weg nach Hause finden. Kannst du mir vielleicht helfen, aus diesem Wald heraus zu kommen?')
-        input('Bitte beliebige Taste eingeben: ')
         print(f'[{coloured_name_Mage}] "Natürlich kenne ich den Weg aus dem Wald. Das erzähle ich jedoch nicht jeder dahergelaufenen Gestalt, welche an meine Tür klopft.\n'
               f'"Dafür musst du schon beweisen, dass du es auch wert bist.')
         input('Bitte irgend eine Taste eingeben: ')
@@ -393,7 +393,7 @@ def black_tower():
             inside_black_tower()
     elif answer == 'durch den Wald':
         print()
-        print(f'{name} macht sich auf den Weg, durch den Wald zu gehen. Auf einmal kommt eine kleine Klippe. "Ich kann dort hinunter {coloured_springen},\n'
+        print(f'{coloured_name} macht sich auf den Weg, durch den Wald zu gehen. Auf einmal kommt eine kleine Klippe. "Ich kann dort hinunter {coloured_springen},\n'
               f'aber ich komme dann nicht mehr {coloured_zurueck}."')
         answer = input('>')
         if answer == 'springen':
@@ -594,15 +594,15 @@ def back_at_home():
     you_win()
 
 
+def you_win():
+    print()
+    print('-----Du Bist Entkommen-----')
+    input('Zum Beenden irgendeine Taste drücken:')
+
+
 def main():
     first_choice()
 
 
 if __name__ == '__main__':
     main()
-
-
-def you_win():
-    print()
-    print('-----Du Bist Entkommen-----')
-    input('Zum Beenden irgendeine Taste drücken:')
