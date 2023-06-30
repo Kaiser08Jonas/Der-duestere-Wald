@@ -1,19 +1,18 @@
 import random
 
-
 # Farbige schrift
 coloured_wrong_answer = '\033[93m' + 'Dies ist keine gültige Eingabe.' + '\033[0m'
-coloured_further = '\033[94m' + 'weiter' + '\033[0m'
-coloured_hut = '\033[94m' + 'Hütte' + '\033[0m'
-coloured_forest = '\033[94m' + 'tiefer in den Wald' + '\033[0m'
-coloured_explore_forest = '\033[94m' + 'den Wald erkunden' + '\033[0m'
-coloured_yes = '\033[94m' + 'Ja' + '\033[0m'
-coloured_no = '\033[94m' + 'Nein' + '\033[0m'
-coloured_kill = '\033[94m' + 'töten' + '\033[0m'
-coloured_run = '\033[94m' + 'läufst' + '\033[0m'
-coloured_cave = '\033[94m' + 'Höhle' + '\033[0m'
-coloured_back = '\033[94m' + 'zurückgehen' + '\033[0m'
-coloured_name_mage = '\033[95m' + 'Odiwandius' + '\033[0m'
+coloured_weiter = '\033[94m' + 'weiter' + '\033[0m'
+coloured_huette = '\033[94m' + 'Hütte' + '\033[0m'
+coloured_wald = '\033[94m' + 'tiefer in den Wald' + '\033[0m'
+coloured_walderkunden = '\033[94m' + 'den Wald erkunden' + '\033[0m'
+coloured_ja = '\033[94m' + 'Ja' + '\033[0m'
+coloured_nein = '\033[94m' + 'Nein' + '\033[0m'
+coloured_toeten = '\033[94m' + 'töten' + '\033[0m'
+coloured_laeufst = '\033[94m' + 'läufst' + '\033[0m'
+coloured_hoehle = '\033[94m' + 'Höhle' + '\033[0m'
+coloured_zurueck = '\033[94m' + 'zurück gehen' + '\033[0m'
+coloured_name_Mage = '\033[95m' + 'Odiwandius' + '\033[0m'
 
 # Einleitung
 print('-----Der düstere Wald-----\nDies ist eine Text basierte Adventuremap\n'
@@ -36,7 +35,7 @@ def first_choice():
     coloured_haus = '\033[94m' + 'nach Hause' + '\033[0m'
     print('Du gehst spazieren, als dir plötzlich etwas schwindelig wird.\n'
           'Du überlegst dir, was du nun tuen könntest und kommst auf zwei Möglichkeiten')
-    print(f'Du kannst {coloured_haus} gehen oder {coloured_further} spazieren gehen')
+    print(f'Du kannst {coloured_haus} gehen oder {coloured_weiter} spazieren gehen')
     answer = input('>')
     print()
     if answer == 'nach Hause':
@@ -53,11 +52,11 @@ def first_choice():
         first_choice()
 
 
-# Der große Baum
+# Das Erwachen
 def the_big_tree():
     print()
     print('-----Der große Baum-----')
-    print(f'"Entweder ich gehe zur {coloured_hut} oder {coloured_forest} hinein. Etwas anderes bleibt mir nicht."')
+    print(f'"Entweder ich gehe zur {coloured_huette} oder {coloured_wald} hinein. Etwas anderes bleibt mir nicht."')
     answer = input('>')
     if answer == 'Hütte':
         hut()
@@ -71,7 +70,6 @@ def the_big_tree():
         the_big_tree()
 
 
-# Das Erwachen
 def the_awakening():
     print()
     print('-----Das Erwachen-----')
@@ -84,14 +82,14 @@ def the_awakening():
 
 # Die Hütte
 def hut():
-    coloured_enter = '\033[94m' + 'versuchen hinein' + '\033[0m'
-    coloured_look_from_outside = '\033[94m' + 'außen anschauen' + '\033[0m'
+    coloured_hinein_gehen = '\033[94m' + 'versuchen hinein' + '\033[0m'
+    coloured_aussen_anschauen = '\033[94m' + 'außen anschauen' + '\033[0m'
     print()
     print('-----Die Hütte-----')
     print(f'"Hmmm die Hütte scheint nur einen Eingang zu haben. Eine Tür auf der Vorderseite."\n'
-          f'"Vielleicht sollte ich {coloured_enter} zu gehen?"\n'
-          f'"Allerdings könnte ich sie mir erst einmal von {coloured_look_from_outside} oder wieder\n'
-          f'{coloured_back} zum großen Baum gehen."')
+          f'"Vielleicht sollte ich {coloured_hinein_gehen} zu gehen?"\n'
+          f'"Allerdings könnte ich sie mir erst einmal von {coloured_aussen_anschauen} oder wieder\n'
+          f'{coloured_zurueck} zum großen Baum gehen."')
     answer = input('>')
     if answer == 'versuchen hinein':
         print()
@@ -104,7 +102,7 @@ def hut():
         else:
             print('"Ich bekomme sie nicht auf. Vermutlich brauche ich einen Schlüssel. Wo bekomme ich nur einen her?"\n'
                   '"Am besten gehe Ich zurück"')
-            print(input('Zum zurückgehen beliebige Taste eingeben:'))
+            print(input('Zum zurück gehen beliebige Taste eingeben:'))
             print(f'{coloured_name} geht zurück zu dem Ort an dem er aufgewacht ist')
             the_big_tree()
     elif answer == 'außen anschauen':
@@ -117,7 +115,7 @@ def hut():
               'Es hat Zähne, mit denen es dich im nu verspeisen könnte.\n'
               'Durch deinen Schrei ist es aufmerksam auf dich geworden und kommt auf dich zu!')
         the_monster()
-    elif answer == 'zurückgehen':
+    elif answer == 'zurück gehen':
         print()
         print('"Ich gehe wohl lieber zurück"')
         the_big_tree()
@@ -127,14 +125,14 @@ def hut():
         hut()
 
 
-# In der Hütte
 def inside_hut():
-    coloured_bedroom = '\033[94m' + 'Schlafzimmer' + '\033[0m'
-    coloured_kitchen = '\033[94m' + 'Küche' + '\033[0m'
-    coloured_bathroom = '\033[94m' + 'Badezimmer' + '\033[0m'
+    coloured_schlafzimmer = '\033[94m' + 'Schlafzimmer' + '\033[0m'
+    coloured_kueche = '\033[94m' + 'Küche' + '\033[0m'
+    coloured_badezimmer = '\033[94m' + 'Badezimmer' + '\033[0m'
+    # In der Hütte
     print(f'{coloured_name} geht in die Hütte. Es gibt dort nur drei Räume.\n'
-          f'Ein {coloured_bedroom}, eine {coloured_kitchen} und ein {coloured_bathroom}. "Wohin soll ich nur gehen?"\n'
-          f'"Ich könnte auch {coloured_back}')
+          f'Ein {coloured_schlafzimmer}, eine {coloured_kueche} und ein {coloured_badezimmer}. "Wohin soll ich nur gehen?"\n'
+          f'"Ich könnte auch {coloured_zurueck}')
     answer = input('>')
     if answer == 'Schlafzimmer':
         print()
@@ -145,14 +143,14 @@ def inside_hut():
               f'zur seite und {coloured_name} sah einen kleinen Spalt im Boden.\n'
               f'"Unter dem Teppich befindet sich eine Luke"\n'
               f'Als {coloured_name} die Luke öffnet, ist dort nur ein Loch nach unten. Doch plötzlich kommen dort Stufen aus der Wand gefahren\n'
-              f'"Soll ich nach unten gehen?" ({coloured_yes} oder {coloured_back})')
+              f'"Soll ich nach unten gehen?" ({coloured_ja} oder {coloured_zurueck})')
         answer = input('>')
         if answer == 'Ja':
             print()
             print(f'"Ich gehe wohl nach unten"\n'
                   f'{coloured_name} wagt sich die Stufen hinunter ins ungewisse')
             get_spellbook()
-        elif answer == 'zurückgehen':
+        elif answer == 'zurück gehen':
             print()
             print('"Ich gehe besser wider zurück. Wer weiß schließlich schon, was dort unten auf mich wartet"')
             inside_hut()
@@ -169,10 +167,9 @@ def inside_hut():
         inside_hut()
     elif answer == 'Badezimmer':
         print()
-        print(
-            '"Da steht eine Toilette, welche bestimmt seit Monaten nicht mehr sauber gemacht wurde."\n''"Ansonsten kann ich nichts weiter hier finden."')
+        print('"Da steht eine Toilette, welche bestimmt seit Monaten nicht mehr sauber gemacht wurde."\n''"Ansonsten kann ich nichts weiter hier finden."')
         inside_hut()
-    elif answer == 'zurückgehen':
+    elif answer == 'zurück gehen':
         print()
         print('"Ich gehe wohl lieber zurück"')
         hut()
@@ -185,13 +182,13 @@ def inside_hut():
 # Das Zauberbuch
 def get_spellbook():
     global spellbook
-    coloured_take_along = '\033[94m' + 'mitnehmen' + '\033[0m'
-    coloured_leave_there = '\033[94m' + 'dalassen' + '\033[0m'
+    coloured_mitnehmen = '\033[94m' + 'mitnehmen' + '\033[0m'
+    coloured_dalassen = '\033[94m' + 'dalassen' + '\033[0m'
     print(f'Am ender der Stufen geht {coloured_name} um eine Ecke.')
     if not spellbook:
         print(f'"Ein geheimer Raum in dessen Mitte ein Podest mir einem merkwürdigen Buch steht"\n'
               f'"Es ist in einer Sprache verfasst, die ich noch nie zuvor gesehen habe"\n'
-              f'"Ich kann es {coloured_take_along} oder {coloured_leave_there}."')
+              f'"Ich kann es {coloured_mitnehmen} oder {coloured_dalassen}."')
         answer = input('>')
         if answer == 'mitnehmen':
             print()
@@ -215,7 +212,7 @@ def get_spellbook():
 
 # Das Monster
 def the_monster():
-    print(f'Entweder du versuchst es zu {coloured_kill} oder du {coloured_run} um dein Leben')
+    print(f'Entweder du versuchst es zu {coloured_toeten} oder du {coloured_laeufst} um dein Leben')
     answer = input('>')
     if answer == 'töten':
         print()
@@ -224,15 +221,15 @@ def the_monster():
               'und mit seinen Händen in der hälfte auseinander gerissen!')
         death()
     elif answer == 'läufst':
-        random_number = random.randrange(2)
-        if random_number == 0:
+        zufallszahl = random.randrange(2)
+        if zufallszahl == 0:
             print()
             print('Du fängst an so schnell wie möglich zu laufen, doch das Monster folgt dir und kommt immer näher.\n'
                   'Du läufst durch den Wald und plötzlich wirst du von etwas in die Luft gehoben.\n'
                   '"AAAHHHH" schreist du und das letzte was du siehst sind die riesigen Zähne des Monsters, welche dir\n'
                   'mit einem Bissen den Kopf von deinen Schultern trennen.')
             death()
-        elif random_number == 1:
+        elif zufallszahl == 1:
             print()
             print('Du fängst an so schnell wie möglich zu laufen, doch das Monster folgt dir und kommt immer näher.\n'
                   'Du läufst durch den Wald und plötzlich hörst du nichts mehr hinter dir. Als du stehen bleibst,\n'
@@ -250,12 +247,12 @@ def the_monster():
 
 # Der Wald
 def forest():
-    coloured_big_tree = '\033[94m' + 'großen Baum' + '\033[0m'
+    coloured_grosser_baum = '\033[94m' + 'großen Baum' + '\033[0m'
     print()
     print('-----Der Wald-----')
     print(f'Plötzlich entdeckst du etwas. "Dort vorne ist eine Höhle. Was sie wohl verbergen mag?"\n'
-          f'"Entweder Ich gehe in die {coloured_cave} oder sollte ich {coloured_explore_forest}"\n'
-          f'Vielleicht lohnt es sich auch, wieder zurück zum {coloured_big_tree} zu gehen."')
+          f'"Entweder Ich gehe in die {coloured_hoehle} oder sollte ich {coloured_walderkunden}"\n'
+          f'Vielleicht lohnt es sich auch, wieder zurück zum {coloured_grosser_baum} zu gehen."')
     answer = input('>')
     if answer == 'Höhle':
         print()
@@ -278,46 +275,42 @@ def forest():
 # Die Höhle
 def cave():
     global behind_the_cave
-    coloured_sneak = '\033[94m' + 'vorbei schleichen' + '\033[0m'
-    coloured_runs = '\033[94m' + 'laufe' + '\033[0m'
-    coloured_running = '\033[94m' + 'laufen' + '\033[0m'
+    coloured_schleichen = '\033[94m' + 'vorbei schleichen' + '\033[0m'
+    coloured_laufe = '\033[94m' + 'laufe' + '\033[0m'
+    coloured_laufen = '\033[94m' + 'laufen' + '\033[0m'
     print()
     print('-----Die Höhle-----')
     if not behind_the_cave:
         print(f'"Ohhh nein" flüsterst du. "Da vorne liegt ein Bär. Anscheinend schläft er."\n'
-              f'Du überlegst dir, wie du an ihm vorbei kommen sollst und denkst dir: "Soll ich einfach wieder {coloured_back}?\n'
-              f'Aber vielleicht kann ich mich auch an ihm {coloured_sneak}, oder ich {coloured_runs} einfach zur anderen seite der Höhle und hoffe,\n'
+              f'Du überlegst dir, wie du an ihm vorbei kommen sollst und denkst dir: "Soll ich einfach wieder {coloured_zurueck}?\n'
+              f'Aber vielleicht kann ich mich auch an ihm {coloured_schleichen}, oder ich {coloured_laufe} einfach zur anderen seite der Höhle und hoffe,\n'
               f'dass ich schnell genug bin und dort ankomme, bevor er mich tötet."')
         answer = input('>')
         if answer == 'vorbei schleichen':
             print()
-            print(
-                f'{coloured_name} versucht sich an dem Bären vorbei zu schleichen. Sollte {coloured_name} nur einen falschen schritt machen, könnte es den Bären aufwecken\n'
-                f'{coloured_name} stolpert und fällt hin. "Aaaaahhhh!!!" Durch diesen lauten Schrei wacht der Bär auf und fängt an auf dich zu zu laufen. ({coloured_running} oder {coloured_kill})')
+            print(f'{coloured_name} versucht sich an dem Bären vorbei zu schleichen. Sollte {coloured_name} nur einen falschen schritt machen, könnte es den Bären aufwecken\n'
+                  f'{coloured_name} stolpert und fällt hin. "Aaaaahhhh!!!" Durch diesen lauten Schrei wacht der Bär auf und fängt an auf dich zu zu laufen. ({coloured_laufen} oder {coloured_toeten})')
             answer = input('>')
             if answer == 'laufen':
                 print()
-                print(
-                    f'{coloured_name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf. Bis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
-                    f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung erklimmen und dich so vor dem Bären in sicherheit bringen.\n'
-                    f'"Das war aber knapp!" Du legst dich auf den Boden und atmest tief durch. Dann gehst du weiter durch die Höhle.')
+                print(f'{coloured_name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf. Bis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
+                      f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung erklimmen und dich so vor dem Bären in sicherheit bringen.\n'
+                      f'"Das war aber knapp!" Du legst dich auf den Boden und atmest tief durch. Dann gehst du weiter durch die Höhle.')
                 behind_the_cave = True
                 mountain_of_corpses()
             if answer == 'töten':
                 print()
-                print(
-                    'Du stürzt dich auf den Bären voller Hoffnung, ihn töten zu können. Der Bär stürzt sich auf dich und du fällst um. Er zerfleischt dein Bein, während du\n'
-                    'nur schreiend am boden liegst. Dann Macht er das gleiche, was er zuvor mit deinem Bein gemacht hat auf mit allen anderen Körperteilen.')
+                print('Du stürzt dich auf den Bären voller Hoffnung, ihn töten zu können. Der Bär stürzt sich auf dich und du fällst um. Er zerfleischt dein Bein, während du\n'
+                      'nur schreiend am boden liegst. Dann Macht er das gleiche, was er zuvor mit deinem Bein gemacht hat auf mit allen anderen Körperteilen.')
                 death()
         elif answer == 'laufe':
             print()
-            print(
-                f'{coloured_name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf. Bis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
-                f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung erklimmen und dich so vor dem Bären in sicherheit bringen.\n'
-                f'"Das war aber knapp!" Du legst dich auf den Boden und atmest tief durch. Dann gehst du weiter durch die Höhle.')
+            print(f'{coloured_name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf. Bis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
+                  f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung erklimmen und dich so vor dem Bären in sicherheit bringen.\n'
+                  f'"Das war aber knapp!" Du legst dich auf den Boden und atmest tief durch. Dann gehst du weiter durch die Höhle.')
             behind_the_cave = True
             mountain_of_corpses()
-        elif answer == 'zurückgehen':
+        elif answer == 'zurück gehen':
             print()
             print('"Ich glaube, das beides keine gute Idee wäre und kehre deshalb lieber wieder um".')
             forest()
@@ -337,7 +330,7 @@ def mountain_of_corpses():
         print()
         print(f'Plötzlich bleibst du stehen. "Dort ist ein Berg von Leichen. Am besten gehe ich einfach weiter."\n'
               f'Doch als du gerade los gehen wolltest fällt dir etwas auf.\n'
-              f'Mitten in den Leichen siehst du etwas glänzen. Willst du es holen? {coloured_yes} oder {coloured_no}')
+              f'Mitten in den Leichen siehst du etwas glänzen. Willst du es holen? {coloured_ja} oder {coloured_nein}')
         answer = input('>')
         if answer == 'Ja':
             print()
@@ -363,57 +356,50 @@ def mountain_of_corpses():
 
 # Der Schwarze Turm
 def black_tower():
-    coloured_go_to_tower = '\033[94m' + 'zum Turm gehen' + '\033[0m'
-    coloured_through_the_forest = '\033[94m' + 'durch den Wald' + '\033[0m'
-    coloured_jump = '\033[94m' + 'springen' + '\033[0m'
+    coloured_zum_turm_gehen = '\033[94m' + 'zum Turm gehen' + '\033[0m'
+    coloured_durch_den_wald = '\033[94m' + 'durch den Wald' + '\033[0m'
+    coloured_springen = '\033[94m' + 'springen' + '\033[0m'
     coloured_spellbook = '\033[4m' + 'Zauberbuch' + '\033[0m'
     print()
     print('-----Der Schwarze Turm-----')
     print('"Dort vorne ist ein riesiger schwarzer Turm. Was erwartet mich dort wohl schon wieder?"\n'
-          f'"Vielleicht sollte ich nicht {coloured_go_to_tower}. Ich könnte auch dort vorne den Pfad {coloured_through_the_forest} nehmen."')
+          f'"Vielleicht sollte ich nicht {coloured_zum_turm_gehen}. Ich könnte auch dort vorne den Pfad {coloured_durch_den_wald} nehmen."')
     answer = input('>')
     if answer == 'zum Turm gehen':
         print()
-        print(
-            f'"Mal sehen, was es bei dem gruseligen, dunklen, furchteinflößenden, unheimlichen ... Ach ich denke einfach nicht mehr daran. Auf zum Turm!"\n'
-            f'Du gehst zur Vorderseite des Turmes und findest eine Tür. "Vielleicht ist dort ja jemand drinnen der mich versklavt, oder noch schlimmeres mit mir tut."\n'
-            f'Als du dich dazu überwinden konntest daran zu klopfen geht die Tür einen Spalt auf.')
-        print(
-            f'[{coloured_name_mage}] "Ich bin der Zauberer Odiwandius. Was haben Sie hier an meinem heiligen Ort zu suchen?')
-        print(
-            '"Ich will nur einen Weg nach Hause finden. Kannst du mir vielleicht helfen, aus diesem Wald heraus zu kommen?')
-        print(
-            f'[{coloured_name_mage}] "Natürlich kenne ich den Weg aus dem Wald. Das erzähle ich jedoch nicht jeder dahergelaufenen Gestalt, welche an meine Tür klopft.\n'
-            f'"Dafür musst du schon beweisen, dass du es auch wert bist.')
+        print(f'"Mal sehen, was es bei dem gruseligen, dunklen, furchteinflößenden, unheimlichen ... Ach ich denke einfach nicht mehr daran. Auf zum Turm!"\n'
+              f'Du gehst zur Vorderseite des Turmes und findest eine Tür. "Vielleicht ist dort ja jemand drinnen der mich versklavt, oder noch schlimmeres mit mir tut."\n'
+              f'Als du dich dazu überwinden konntest daran zu klopfen geht die Tür einen Spalt auf.')
+        print(f'[{coloured_name_Mage}] "Ich bin der Zauberer Odiwandius. Was haben Sie hier an meinem heiligen Ort zu suchen?')
+        print('"Ich will nur einen Weg nach Hause finden. Kannst du mir vielleicht helfen, aus diesem Wald heraus zu kommen?')
+        print(f'[{coloured_name_Mage}] "Natürlich kenne ich den Weg aus dem Wald. Das erzähle ich jedoch nicht jeder dahergelaufenen Gestalt, welche an meine Tür klopft.\n'
+              f'"Dafür musst du schon beweisen, dass du es auch wert bist.')
         input('Bitte irgend eine Taste eingeben: ')
         if whisper:
             inside_black_tower()
         elif not spellbook:
             print()
             print('"Wie soll ich das anstellen?"')
-            print(
-                f'[{coloured_name_mage}] "Wenn du mir mein {coloured_spellbook} zurückbringst, dann würde ich dir das Geheimnis des waldes verraten und auch, wie du ihn verlassen kannst.')
+            print(f'[{coloured_name_Mage}] "Wenn du mir mein {coloured_spellbook} zurückbringst, dann würde ich dir das Geheimnis des waldes verraten und auch, wie du ihn verlassen kannst.')
             print('"OK. Ich bringe dir dein Zauberbuch."\n'
                   'Der Zauberer schließt die Tür, ohne auch nur ein weiteres Wort zu sagen und du gehst wieder weiter weg vom Turm')
             black_tower()
         elif spellbook:
             print()
-            print(f'[{coloured_name_mage}] "Ooohhh. Ich spüre die Anwesenheit meines {coloured_spellbook}."\n'
+            print(f'[{coloured_name_Mage}] "Ooohhh. Ich spüre die Anwesenheit meines {coloured_spellbook}."\n'
                   f'Er öffnet die Tür, reißt dir das Buch aus den Händen und verschließt die Tür wieder.\n'
                   f'als du schon wieder weg gehen wolltest, geht dir Tür wieder auf\n'
-                  f'[{coloured_name_mage}] "Danke dass du mir mein Buch zurück gebracht hast."')
+                  f'[{coloured_name_Mage}] "Danke dass du mir mein Buch zurück gebracht hast."')
             inside_black_tower()
     elif answer == 'durch den Wald':
         print()
-        print(
-            f'{coloured_name} macht sich auf den Weg, durch den Wald zu gehen. Auf einmal kommt eine kleine Klippe. "Ich kann dort hinunter {coloured_jump},\n'
-            f'aber ich komme dann nicht mehr {coloured_back}."')
+        print(f'{coloured_name} macht sich auf den Weg, durch den Wald zu gehen. Auf einmal kommt eine kleine Klippe. "Ich kann dort hinunter {coloured_springen},\n'
+              f'aber ich komme dann nicht mehr {coloured_zurueck}."')
         answer = input('>')
         if answer == 'springen':
             print()
-            print(
-                'Du springst die Klippe hinunter. Dann gehst du noch ein paar schritte nur um festzustellen, dass du an diesem Ort schon einmal warst\n'
-                '"Ich binn wieder vor der Höhle"')
+            print('Du springst die Klippe hinunter. Dann gehst du noch ein paar schritte nur um festzustellen, dass du an diesem Ort schon einmal warst\n'
+                  '"Ich binn wieder vor der Höhle"')
             forest()
         elif answer == 'zurück':
             print()
@@ -433,27 +419,26 @@ def black_tower():
 def inside_black_tower():
     coloured_whisper = '\033[94m' + 'Flüstern' + '\033[0m'
     print()
-    print(f'[{coloured_name_mage}]"Komm doch herein, dann können wir reden."\n'
-          f'[{coloured_name_mage}]"Du willst vermutlich wissen, wie du aus dem Wald heraus kommst oder?\n'
+    print(f'[{coloured_name_Mage}]"Komm doch herein, dann können wir reden."\n'
+          f'[{coloured_name_Mage}]"Du willst vermutlich wissen, wie du aus dem Wald heraus kommst oder?\n'
           f'"Ja! Kannst du mir sagen wie?"\n'
-          f'[{coloured_name_mage}]"Es ist im grunde ganz einfach. Folge dem {coloured_whisper}"\n'
+          f'[{coloured_name_Mage}]"Es ist im grunde ganz einfach. Folge dem {coloured_whisper}"\n'
           f'"Was meinst du genau damit?\n'
-          f'[{coloured_name_mage}]"Folge dem {coloured_whisper}. Mehr kann ich dir nicht sagen."\n'
+          f'[{coloured_name_Mage}]"Folge dem {coloured_whisper}. Mehr kann ich dir nicht sagen."\n'
           f'Du schaust ihn bisschen verwundert an. Schließlich verabschiedest du dich un gehst wieder hinaus.')
     global whisper
     whisper = True
     black_tower()
 
 
-# Noch tiefer in den Wald
+# Noch tiefer in dem Wald
 def deeper_in_the_forest():
-    coloured_campfire = '\033[94m' + 'Lagerfeuers' + '\033[0m'
-    coloured_follow_path = '\033[94m' + 'Weg folgen' + '\033[0m'
+    coloured_lagerfeuer = '\033[94m' + 'Lagerfeuers' + '\033[0m'
+    coloured_wegfolgen = '\033[94m' + 'Weg folgen' + '\033[0m'
     print()
-    print(
-        f'"Dort vorne ist ein Licht. Es sieht aus wie das eines {coloured_campfire}. Dort ist doch bestimmt irgend jemand."\n'
-        f'"Allerdings könnte ich auch diesem {coloured_follow_path}. Vielleicht bringt der mich an einen interessanten Ort."\n'
-        f'"An beiden Orten könnte es gefährlich sein. Sollte ich wieder {coloured_back}?')
+    print(f'"Dort vorne ist ein Licht. Es sieht aus wie das eines {coloured_lagerfeuer}. Dort ist doch bestimmt irgend jemand."\n'
+          f'"Allerdings könnte ich auch diesem {coloured_wegfolgen}. Vielleicht bringt der mich an einen interessanten Ort."\n'
+          f'"An beiden Orten könnte es gefährlich sein. Sollte ich wieder {coloured_zurueck}?')
     answer = input('>')
     if answer == 'Lagerfeuers':
         print()
@@ -464,7 +449,7 @@ def deeper_in_the_forest():
         print()
         print('"Hoffentlich bringt mich das Licht zu einem schöneren Ort, als diesen dunklen Wald')
         clearing()
-    elif answer == 'zurückgehen':
+    elif answer == 'zurück gehen':
         print()
         print('"Ich gehe erst einmal wieder etwas aus dem Wald heraus."')
         forest()
@@ -478,8 +463,8 @@ def deeper_in_the_forest():
 def campfire():
     coloured_tolloni = '\033[36m' + 'Tonolli' + '\033[0m'
     coloured_jakobus = '\033[36m' + 'Jakobus' + '\033[0m'
-    coloured_trust = '\033[94m' + 'vertrauen' + '\033[0m'
-    coloured_not = '\033[94m' + 'nicht' + '\033[0m'
+    coloured_vertrauen = '\033[94m' + 'vertrauen' + '\033[0m'
+    coloured_nicht = '\033[94m' + 'nicht' + '\033[0m'
     print('-----Das Lagerfeuer-----')
     print('Du hörst, wie sich zwei eingeborene unterhalten\n'
           f'[{coloured_jakobus}]"Uns geht so langsam das Essen aus."\n'
@@ -491,7 +476,7 @@ def campfire():
           f'Die beiden sehen sich ein paar Sekunden an und nicken dann.\n'
           f'[{coloured_jakobus}]"Wir können dir helfen. Aber wir wollen vorher neues Essen besorgen."\n'
           f'[{coloured_tolloni}]"Ja. Genau. Wenn du mit kommst, dann helfen wir dir"\n'
-          f'Willst du ihnen {coloured_trust} oder lieber {coloured_not} und weiter auf dem Weg gehen.')
+          f'Willst du ihnen {coloured_vertrauen} oder lieber {coloured_nicht} und weiter auf dem Weg gehen.')
     answer = input('>')
     if answer == 'vertrauen':
         print()
@@ -517,14 +502,13 @@ def campfire():
 # Die Lichtung
 def clearing():
     coloured_name_whisper = '\033[33m' + 'Flüstern' + '\033[0m'
-    coloured_go = '\033[94m' + 'gehen' + '\033[0m'
-    coloured_follow_me = '\033[94m' + 'Folge mir' + '\033[0m'
+    coloured_gehen = '\033[94m' + 'gehen' + '\033[0m'
+    coloured_folgemir = '\033[94m' + 'Folge mir' + '\033[0m'
     print()
     print('-----Die Lichtung-----')
-    print(
-        f'Als du bei der Lichtung ankommst hörst du plötzlich ein leises Flüstern. Dabei fühlst du dich ein bisschen wie hypnotisiert. \n'
-        f'Ob du wieder {coloured_go} solltest?\n'
-        f'[{coloured_name_whisper}]"{coloured_follow_me}"')
+    print(f'Als du bei der Lichtung ankommst hörst du plötzlich ein leises Flüstern. Dabei fühlst du dich ein bisschen wie hypnotisiert. \n'
+          f'Ob du wieder {coloured_gehen} solltest?\n'
+          f'[{coloured_name_whisper}]"{coloured_folgemir}"')
     answer = input('>')
     if answer == 'gehen':
         print()
@@ -543,12 +527,12 @@ def clearing():
 def cliff():
     global whisper
     coloured_name_whisper = '\033[33m' + 'Flüstern' + '\033[0m'
-    coloured_jump = '\033[94m' + 'spring' + '\033[0m'
-    coloured_oppose = '\033[94m' + 'widersetzen' + '\033[0m'
+    coloured_spring = '\033[94m' + 'spring' + '\033[0m'
+    coloured_widersetzen = '\033[94m' + 'widersetzen' + '\033[0m'
     print()
     print('-----Die Klippe-----')
-    print(f'[{coloured_name_whisper}]"Vertraue mir und {coloured_jump}."\n'
-          f'Solltest du dich ihr {coloured_oppose}?')
+    print(f'[{coloured_name_whisper}]"Vertraue mir und {coloured_spring}."\n'
+          f'Solltest du dich ihr {coloured_widersetzen}?')
     answer = input('>')
     if answer == 'spring':
         print('"Ich hoffe, es stimmt."\n'
@@ -566,17 +550,15 @@ def cliff():
             print(coloured_wrong_answer)
             cliff()
     elif answer == 'widersetzen':
-        random_number = random.randrange(2)
-        if random_number == 0:
+        zufallszahl = random.randrange(2)
+        if zufallszahl == 0:
             print()
-            print(
-                'Nachdem du dich widersetzt hast weist du nicht mehr wo du bist und irrst ziellos im Wald umher bis du schließlich verdurstest.')
+            print('Nachdem du dich widersetzt hast weist du nicht mehr wo du bist und irrst ziellos im Wald umher bis du schließlich verdurstest.')
             death()
-        elif random_number == 1:
+        elif zufallszahl == 1:
             print()
-            print(
-                'Nachdem du dich widersetzt hast weist du nicht mehr wo du bist und irrst ziellos im Wald umher. Plötzlich siehst du\n'
-                'am horizont den einen Schwarzen Turm und läufst zu ihm.')
+            print('Nachdem du dich widersetzt hast weist du nicht mehr wo du bist und irrst ziellos im Wald umher. Plötzlich siehst du\n'
+                  'am horizont den einen Schwarzen Turm und läufst zu ihm.')
             black_tower()
         else:
             print()
