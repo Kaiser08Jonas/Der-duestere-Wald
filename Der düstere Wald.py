@@ -1,6 +1,6 @@
 import random
 
-# Farbige schrift
+# Farbige Schrift
 coloured_wrong_answer = '\033[93m' + 'Dies ist keine gültige Eingabe.' + '\033[0m'
 coloured_further = '\033[94m' + 'weiter' + '\033[0m'
 coloured_hut = '\033[94m' + 'Hütte' + '\033[0m'
@@ -14,10 +14,16 @@ coloured_cave = '\033[94m' + 'Höhle' + '\033[0m'
 coloured_back = '\033[94m' + 'zurückgehen' + '\033[0m'
 coloured_name_mage = '\033[95m' + 'Odiwandius' + '\033[0m'
 
+# Himmelsrichtungen
+coloured_north = '\033[94m' + 'Norden' + '\033[0m'
+coloured_west = '\033[94m' + 'Westen' + '\033[0m'
+coloured_south = '\033[94m' + 'Süden' + '\033[0m'
+coloured_east = '\033[94m' + 'Osten' + '\033[0m'
+
 # Einleitung
-print('-----Der düstere Wald-----\nDies ist eine Text basierte Adventuremap\n'
-      f'Vorab noch eine Info: Es werden alle möglichkeiten, welche zur Verfügung stehen immer\n'
-      f'beschrieben und das Wort, welches man zum auswählen verwendet immer in Blauer Schrift dargestellt.\n'
+print('-----Der düstere Wald-----\nDies ist eine textbasiertes Adventure Game\n'
+      f'Vorab noch eine Info: Es werden alle Möglichkeiten, welche zur Verfügung stehen immer\n'
+      f'beschrieben und das Wort, welches man zum auswählen verwendet immer in blauer Schrift dargestellt.\n'
       f'Ansonsten viel Spaß\n'
       f'')
 name = input('Als erstes gib doch bitte deinen Namen ein: ')
@@ -34,7 +40,7 @@ behind_the_cave = False
 def first_choice():
     print('Du gehst spazieren, als dir plötzlich etwas schwindelig wird.\n'
           'Du überlegst dir, was du nun tuen könntest und kommst auf zwei Möglichkeiten')
-    print(f'Du kannst nach Hause in richtung Norden gehen oder weiter nach Osten spazieren gehen')
+    print(f'Du kannst nach Hause in Richtung {coloured_north} gehen oder weiter nach {coloured_east} spazieren gehen')
     answer = input('> ')
     print()
     if answer == 'Norden':
@@ -55,11 +61,11 @@ def first_choice():
 def the_big_tree():
     print()
     print('-----Der große Baum-----')
-    print(f'"Entweder ich gehe zur Hütte im Westen oder nach Osten in den Wald hinein. Etwas anderes bleibt mir nicht."')
+    print(f'"Entweder ich gehe zur Hütte im {coloured_west} oder nach {coloured_east} in den Wald hinein. Etwas anderes bleibt mir nicht."')
     answer = input('> ')
-    if answer == 'Hütte':
+    if answer == 'Westen':
         hut()
-    elif answer == 'tiefer in den Wald':
+    elif answer == 'Osten':
         print()
         print(f'"Ich will tiefer in den Wald gehen!" sagte {coloured_name} entschlossen und ging los.')
         forest()
@@ -251,8 +257,8 @@ def forest():
     print()
     print('-----Der Wald-----')
     print(f'Plötzlich entdeckst du etwas. "Dort vorne ist eine Höhle. Was sie wohl verbergen mag?"\n'
-          f'"Entweder Ich gehe in die Nach Süden in die Höhle oder tiefer in den Wald im Osten gehen."\n'
-          f'Vielleicht lohnt es sich auch, wieder zurück zum großen Baum im Westen zu gehen."')
+          f'"Entweder Ich gehe in die Nach {coloured_south} in die Höhle oder tiefer in den Wald im {coloured_east} gehen."\n'
+          f'Vielleicht lohnt es sich auch, wieder zurück zum großen Baum im {coloured_west} zu gehen."')
     answer = input('> ')
     if answer == 'Süden':
         print()
@@ -282,7 +288,7 @@ def cave():
     print('-----Die Höhle-----')
     if not behind_the_cave:
         print(f'"Ohhh nein" flüsterst du. "Da vorne liegt ein Bär. Anscheinend schläft er."\n'
-              f'Du überlegst dir, wie du an ihm vorbei kommen sollst und denkst dir: "Soll ich einfach wieder in richtung Norden aus der Höhle heraus?\n'
+              f'Du überlegst dir, wie du an ihm vorbei kommen sollst und denkst dir: "Soll ich einfach wieder in richtung {coloured_north} aus der Höhle heraus?\n'
               f'Aber vielleicht kann ich mich auch an ihm {coloured_sneak}, oder ich {coloured_runs} einfach zur anderen seite der Höhle und hoffe,\n'
               f'dass ich schnell genug bin und dort ankomme, bevor er mich tötet."')
         answer = input('> ')
@@ -365,7 +371,7 @@ def black_tower():
     print()
     print('-----Der Schwarze Turm-----')
     print('"Dort vorne ist ein riesiger schwarzer Turm. Was erwartet mich dort wohl schon wieder?"\n'
-          f'"Vielleicht sollte ich nicht nach Westen zum Turm gehen. Ich könnte auch dort vorne den Pfad im Norden nehmen."')
+          f'"Vielleicht sollte ich nicht nach {coloured_west} zum Turm gehen. Ich könnte auch dort vorne den Pfad im {coloured_north} nehmen."')
     answer = input('> ')
     if answer == 'Westen':
         print()
@@ -444,9 +450,9 @@ def inside_black_tower():
 def deeper_in_the_forest():
     print()
     print(
-        f'"Dort vorne ist ein Licht. Es sieht aus wie das eines Lagerfeuer welches im Süden brennt. Dort ist doch bestimmt irgend jemand."\n'
-        f'"Allerdings könnte ich auch diesem Weg in den Osten folgen. Vielleicht bringt der mich an einen interessanten Ort."\n'
-        f'"An beiden Orten könnte es gefährlich sein. Sollte ich wieder zurück in den Westen gehen?')
+        f'"Dort vorne ist ein Licht. Es sieht aus wie das eines Lagerfeuer welches im {coloured_south} brennt. Dort ist doch bestimmt irgend jemand."\n'
+        f'"Allerdings könnte ich auch diesem Weg in den {coloured_east} folgen. Vielleicht bringt der mich an einen interessanten Ort."\n'
+        f'"An beiden Orten könnte es gefährlich sein. Sollte ich wieder zurück in den {coloured_west} gehen?')
     answer = input('> ')
     if answer == 'Süden':
         print()
@@ -514,8 +520,8 @@ def clearing():
     print('-----Die Lichtung-----')
     print(
         f'Als du bei der Lichtung ankommst hörst du plötzlich ein leises Flüstern. Dabei fühlst du dich ein bisschen wie hypnotisiert. \n'
-        f'Ob du wieder zurück in den Westen gehen solltest?\n'
-        f'[{coloured_name_whisper}]"Folge mir in den Süden"')
+        f'Ob du wieder zurück in den {coloured_west} gehen solltest?\n'
+        f'[{coloured_name_whisper}]"Folge mir in den {coloured_south}"')
     answer = input('> ')
     if answer == 'Westen':
         print()
