@@ -1,5 +1,6 @@
 import random
 
+
 # Farbige schrift
 coloured_wrong_answer = '\033[93m' + 'Dies ist keine gültige Eingabe.' + '\033[0m'
 coloured_further = '\033[94m' + 'weiter' + '\033[0m'
