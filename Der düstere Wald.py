@@ -95,7 +95,7 @@ def hut():
     print(f'"Hmmm die Hütte scheint nur einen Eingang zu haben. Eine Tür auf der Vorderseite."\n'
           f'"Vielleicht sollte ich {coloured_enter} zu gehen?"\n'
           f'"Allerdings könnte ich sie mir erst einmal von {coloured_look_from_outside} oder wieder\n'
-          f'{coloured_back} zum großen Baum gehen."')
+          f'zurück zum großen Baum im {coloured_east} gehen."')
     answer = input('> ')
     if answer == 'versuchen hinein':
         print()
@@ -121,7 +121,7 @@ def hut():
               'Es hat Zähne, mit denen es dich im nu verspeisen könnte.\n'
               'Durch deinen Schrei ist es aufmerksam auf dich geworden und kommt auf dich zu!')
         the_monster()
-    elif answer == 'zurückgehen':
+    elif answer == 'Osten':
         print()
         print('"Ich gehe wohl lieber zurück"')
         the_big_tree()
@@ -613,6 +613,7 @@ def you_win():
     print()
     print('-----Du Bist Entkommen-----')
     input('Zum Beenden irgendeine Taste drücken:')
+    quit()
 
 
 def main():
