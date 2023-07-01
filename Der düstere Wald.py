@@ -126,8 +126,8 @@ def hut():
 # In der Hütte
 def inside_hut():
     print(f'{coloured_name} geht in die Hütte. Es gibt dort nur drei Räume.\n'
-          f'Ein Schlafzimmer im {coloured_north}, eine Küche im {coloured_west} und ein Badezimmer im {coloured_south}. "Wohin soll ich nur gehen?"\n'
-          f'"Ich könnte auch wieder durch die Tür im {coloured_east} aus dem Haus heraus gehen')
+          f'Ein Schlafzimmer im {coloured_north}, eine Küche im {coloured_west} und ein Badezimmer im {coloured_south}.\n'
+          f'"Wohin soll ich nur gehen? Ich könnte auch wieder durch die Tür im {coloured_east} aus dem Haus heraus gehen."')
     answer = input('> ')
     match answer:
         case "Norden":
@@ -138,8 +138,10 @@ def inside_hut():
                   f'{coloured_name} findet auf den ersten blick nichts, doch als er gehen wollte rutschte der Teppich etwas\n'
                   f'zur seite und {coloured_name} sah einen kleinen Spalt im Boden.\n'
                   f'"Unter dem Teppich befindet sich eine Luke"\n'
-                  f'Als {coloured_name} die Luke öffnet, ist dort nur ein Loch nach unten. Doch plötzlich kommen dort Stufen aus der Wand gefahren\n'
-                  f'"Soll ich nach unten gehen in Richtung {coloured_north} gehen? Vielleicht sollte ich wieder zurück nach {coloured_south} gehen')
+                  f'Als {coloured_name} die Luke öffnet, ist dort nur ein Loch nach unten.\n'
+                  f'Doch plötzlich kommen dort Stufen aus der Wand gefahren\n'
+                  f'"Soll ich nach unten gehen in Richtung {coloured_north} gehen?\n'
+                  f'Vielleicht sollte ich wieder zurück nach {coloured_south} gehen')
             answer = input('> ')
             if answer == 'Norden':
                 print()
@@ -164,7 +166,8 @@ def inside_hut():
         case "Süden":
             print()
             print(
-                '"Da steht eine Toilette, welche bestimmt seit Monaten nicht mehr sauber gemacht wurde."\n''"Ansonsten kann ich nichts weiter hier finden."')
+                '"Da steht eine Toilette, welche bestimmt seit Monaten nicht mehr sauber gemacht wurde."\n'
+                '"Ansonsten kann ich nichts weiter hier finden."')
             inside_hut()
         case "Osten":
             print()
@@ -209,7 +212,8 @@ def get_spellbook():
 # Das Monster
 def the_monster():
     print(
-        f'Entweder du versuchst, das im {coloured_west} auf dich zu kommende Monster zu töten oder du rennst um dein Leben in den Wald im {coloured_east}.')
+        f'Entweder du versuchst, das im {coloured_west} auf dich zu kommende Monster zu töten oder\n'
+        f'du rennst um dein Leben in den Wald im {coloured_east}.')
     answer = input('> ')
     match answer:
         case "Westen":
@@ -279,37 +283,46 @@ def cave():
     print('-----Die Höhle-----')
     if not behind_the_cave:
         print(f'"Ohhh nein" flüsterst du. "Da vorne liegt ein Bär. Anscheinend schläft er."\n'
-              f'Du überlegst dir, wie du an ihm vorbei kommen sollst und denkst dir: "Soll ich einfach wieder in Richtung {coloured_north} aus der Höhle heraus?\n'
-              f'Aber vielleicht kann ich mich auch über einen Pfad im {coloured_east} an ihm vorbeischleichen, oder ich renne einfach zur anderen Seite der Höhle im {coloured_south} und hoffe,\n'
+              f'Du überlegst dir, wie du an ihm vorbei kommen sollst und denkst dir: "Soll ich einfach wieder in Richtung {coloured_north}\n'
+              f'aus der Höhle heraus? Aber vielleicht kann ich mich auch über einen Pfad im {coloured_east} an ihm vorbeischleichen,\n'
+              f'oder ich renne einfach zur anderen Seite der Höhle im {coloured_south} und hoffe,\n'
               f'dass ich schnell genug bin und dort ankomme, bevor er mich tötet."')
         answer = input('> ')
         match answer:
             case "Osten":
                 print()
                 print(
-                    f'{coloured_name} versucht sich an dem Bären vorbei zu schleichen. Sollte {coloured_name} nur einen falschen Schritt machen, könnte es den Bären aufwecken\n'
-                    f'{coloured_name} stolpert und fällt hin. "Aaaaahhhh!!!" Durch diesen lauten Schrei wacht der Bär auf und fängt an auf dich zu zu laufen.\n'
+                    f'{coloured_name} versucht sich an dem Bären vorbei zu schleichen.\n'
+                    f'Sollte {coloured_name} nur einen falschen Schritt machen, könnte es den Bären aufwecken\n'
+                    f'{coloured_name} stolpert und fällt hin.\n'
+                    f'"Aaaaahhhh!!!" Durch diesen lauten Schrei wacht der Bär auf und fängt an auf dich zu zu laufen.\n'
                     f'Entweder du läufst zur anderen Seite der Höhle im {coloured_south} oder du kämpfst gegen den Bären im {coloured_west}')
                 answer = input('> ')
                 if answer == 'Süden':
                     print()
                     print(
-                        f'{coloured_name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf. Bis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
-                        f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung erklimmen und dich so vor dem Bären in sicherheit bringen.\n'
+                        f'{coloured_name} lauft los. Der Bär wacht durch die vielen lauten geräusche auf.\n'
+                        f'aBis er aufsteht bist fast auf der anderen Seite der Höhle angekommen\n'
+                        f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung\n'
+                        f'erklimmen und dich so vor dem Bären in sicherheit bringen.\n'
                         f'"Das war aber knapp!" Du legst dich auf den Boden und atmest tief durch. Dann gehst du weiter durch die Höhle.')
                     behind_the_cave = True
                     mountain_of_corpses()
                 if answer == 'Westen':
                     print()
                     print(
-                        'Du stürzt dich auf den Bären voller Hoffnung, ihn töten zu können. Der Bär stürzt sich auf dich und du fällst um. Er zerfleischt dein Bein, während du\n'
-                        'nur schreiend am boden liegst. Dann Macht er das gleiche, was er zuvor mit deinem Bein gemacht hat auf mit allen anderen Körperteilen.')
+                        'Du stürzt dich auf den Bären voller Hoffnung, ihn töten zu können. Der Bär stürzt sich auf dich und du fällst um.\n'
+                        'Er zerfleischt dein Bein, während du\n'
+                        'nur schreiend am boden liegst. Dann Macht er das gleiche,\n'
+                        'was er zuvor mit deinem Bein gemacht hat auf mit allen anderen Körperteilen.')
                     death()
             case "Süden":
                 print()
                 print(
-                    f'{coloured_name} läuft los. Der Bär wacht durch die vielen lauten Geräusche auf. Bis er aufsteht, bist du fast auf der anderen Seite der Höhle angekommen\n'
-                    f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung erklimmen und dich so vor dem Bären in sicherheit bringen.\n'
+                    f'{coloured_name} läuft los. Der Bär wacht durch die vielen lauten Geräusche auf. Bis er aufsteht,\n'
+                    f'bist du fast auf der anderen Seite der Höhle angekommen\n'
+                    f'Nun läuft der Bär los, doch du kannst dich im letzten Moment einen vorsprung erklimmen und\n'
+                    f'dich so vor dem Bären in sicherheit bringen.\n'
                     f'"Das war aber knapp!" Du legst dich auf den Boden und atmest tief durch. Dann gehst du weiter durch die Höhle.')
                 behind_the_cave = True
                 mountain_of_corpses()
@@ -333,14 +346,16 @@ def mountain_of_corpses():
         print()
         print(f'Plötzlich bleibst du stehen. "Dort ist ein Berg von Leichen. Am besten gehe ich einfach weiter."\n'
               f'Doch als du gerade losgehen wolltest fällt dir etwas auf.\n'
-              f'Mitten in den Leichen siehst du etwas glänzen. Willst du es aus den Leichen im {coloured_west} holen oder weiter in den {coloured_south} gehen?')
+              f'Mitten in den Leichen siehst du etwas glänzen. Willst du es aus den Leichen im {coloured_west} holen\n'
+              f'oder weiter in den {coloured_south} gehen?')
         answer = input('> ')
         match answer:
             case "Westen":
                 print()
                 print('Du greifst zwischen die Leichen hinein und versuchst das was dort glänzt zu bekommen.\n'
                       '"Das ist so ekelhaft." Schließlich erreichst du das Objekt mit deinen Fingern und kannst es heraus ziehen.\n'
-                      '"Es ist ein Schlüssel! Was der nur aufsperren kann? Nun gehe ich aber auf schnellstem Wege aus dieser verdammten Höhle!"\n'
+                      '"Es ist ein Schlüssel! Was der nur aufsperren kann?\n'
+                      'Nun gehe ich aber auf schnellstem Wege aus dieser verdammten Höhle!"\n'
                       'Als du die Höhle verlässt stehst du auf einmal im Schatten eines riesigen schwarzen Turmes.')
                 key = True
                 black_tower()
@@ -365,21 +380,25 @@ def black_tower():
     print()
     print('-----Der Schwarze Turm-----')
     print('"Dort vorne ist ein riesiger schwarzer Turm. Was erwartet mich dort wohl schon wieder?"\n'
-          f'"Vielleicht sollte ich nicht nach {coloured_west} zum Turm gehen. Ich könnte auch dort vorne den Pfad im {coloured_north} nehmen."')
+          f'"Vielleicht sollte ich nicht nach {coloured_west} zum Turm gehen.\n'
+          f'Ich könnte auch dort vorne den Pfad im {coloured_north} nehmen."')
     answer = input('> ')
     match answer:
         case "Westen":
             print()
             print(
-                f'"Mal sehen, was es bei dem gruseligen, dunklen, furchteinflößenden, unheimlichen ... Ach ich denke einfach nicht mehr daran. Auf zum Turm!"\n'
-                f'Du gehst zur Vorderseite des Turmes und findest eine Tür. "Vielleicht ist dort ja jemand drinnen der mich versklavt, oder noch schlimmeres mit mir tut."\n'
+                f'"Mal sehen, was es bei dem gruseligen, dunklen, furchteinflößenden, unheimlichen ...\n'
+                f'Ach ich denke einfach nicht mehr daran. Auf zum Turm!"\n'
+                f'Du gehst zur Vorderseite des Turmes und findest eine Tür. "Vielleicht ist dort ja jemand drinnen der mich versklavt,\n'
+                f'oder noch schlimmeres mit mir tut."\n'
                 f'Als du dich dazu überwinden konntest daran zu klopfen geht die Tür einen Spalt auf.')
             print(
                 f'[{coloured_name_mage}] "Ich bin der Zauberer Odiwandius. Was haben Sie hier an meinem heiligen Ort zu suchen?')
             print(
                 '"Ich will nur einen Weg nach Hause finden. Kannst du mir vielleicht helfen, aus diesem Wald heraus zu kommen?')
             print(
-                f'[{coloured_name_mage}] "Natürlich kenne ich den Weg aus dem Wald. Das erzähle ich jedoch nicht jeder dahergelaufenen Gestalt, welche an meine Tür klopft.\n'
+                f'[{coloured_name_mage}] "Natürlich kenne ich den Weg aus dem Wald. Das erzähle ich jedoch nicht jeder dahergelaufenen\n'
+                f'Gestalt, welche an meine Tür klopft.\n'
                 f'"Dafür musst du schon beweisen, dass du es auch wert bist.')
             input('Bitte irgendeine Taste eingeben: ')
             if whisper:
@@ -388,7 +407,8 @@ def black_tower():
                 print()
                 print('"Wie soll ich das anstellen?"')
                 print(
-                    f'[{coloured_name_mage}] "Wenn du mir mein {coloured_spellbook} zurückbringst, dann würde ich dir das Geheimnis des waldes verraten und auch, wie du ihn verlassen kannst.')
+                    f'[{coloured_name_mage}] "Wenn du mir mein {coloured_spellbook} zurückbringst,\n'
+                    f'dann würde ich dir das Geheimnis des waldes verraten und auch, wie du ihn verlassen kannst.')
                 print('"OK. Ich bringe dir dein Zauberbuch."\n'
                       'Der Zauberer schließt die Tür, ohne auch nur ein weiteres Wort zu sagen und du gehst wieder weiter weg vom Turm')
                 black_tower()
@@ -402,13 +422,15 @@ def black_tower():
         case "Norden":
             print()
             print(
-                f'{coloured_name} macht sich auf den Weg, durch den Wald zu gehen. Auf einmal kommt eine kleine Klippe. "Ich kann weiter in den {coloured_north} gehen und die Klippe hinunter springen.\n'
+                f'{coloured_name} macht sich auf den Weg, durch den Wald zu gehen. Auf einmal kommt eine kleine Klippe.\n'
+                f'"Ich kann weiter in den {coloured_north} gehen und die Klippe hinunter springen.\n'
                 f'Jedoch komme dann nicht mehr zurück zum Turm im {coloured_south}."')
             answer = input('> ')
             if answer == 'Norden':
                 print()
                 print(
-                    'Du springst die Klippe hinunter. Dann gehst du noch ein paar Schritte nur um festzustellen, dass du an diesem Ort schon einmal warst\n'
+                    'Du springst die Klippe hinunter. Dann gehst du noch ein paar Schritte nur um festzustellen,\n'
+                    'dass du an diesem Ort schon einmal warst\n'
                     '"Ich bin wieder vor der Höhle"')
                 forest()
             elif answer == 'Süden':
@@ -445,7 +467,8 @@ def inside_black_tower():
 def deeper_in_the_forest():
     print()
     print(
-        f'"Dort vorne ist ein Licht. Es sieht aus wie das eines Lagerfeuer welches im {coloured_south} brennt. Dort ist doch bestimmt irgend jemand."\n'
+        f'"Dort vorne ist ein Licht. Es sieht aus wie das eines Lagerfeuer welches im {coloured_south} brennt.\n'
+        f'Dort ist doch bestimmt irgend jemand."\n'
         f'"Allerdings könnte ich auch diesem Weg in den {coloured_east} folgen. Vielleicht bringt der mich an einen interessanten Ort."\n'
         f'"An beiden Orten könnte es gefährlich sein. Sollte ich wieder zurück in den {coloured_west} gehen?')
     answer = input('> ')
@@ -484,7 +507,8 @@ def campfire():
           f'Die beiden sehen sich ein paar Sekunden an und nicken dann.\n'
           f'[{coloured_jakobus}]"Wir können dir helfen. Aber wir wollen vorher neues Essen besorgen."\n'
           f'[{coloured_tolloni}]"Ja. Genau. Wenn du mit in den Osten kommst, dann helfen wir dir"\n'
-          f'Willst du ihnen vertrauen und mit in den {coloured_east} gehen oder lieber nicht und weiter auf dem Weg in den {coloured_south} gehen.')
+          f'Willst du ihnen vertrauen und mit in den {coloured_east} gehen oder lieber nicht und\n'
+          f'weiter auf dem Weg in den {coloured_south} gehen.')
     answer = input('> ')
     match answer:
         case "Osten":
@@ -562,7 +586,8 @@ def cliff():
             if random_number == 0:
                 print()
                 print(
-                    'Nachdem du dich widersetzt hast, weißt du nicht mehr wo du bist und irrst ziellos im Wald umher bis du schließlich verdurstest.')
+                    'Nachdem du dich widersetzt hast, weißt du nicht mehr wo du bist und\n'
+                    'irrst ziellos im Wald umher bis du schließlich verdurstest.')
                 death()
             elif random_number == 1:
                 print()
