@@ -9,9 +9,9 @@ def main():
           f'beschrieben und das Wort, welches man zum Auswählen verwendet, immer in blauer Schrift dargestellt.\n'
           + Fore.WHITE)
 
-    name = input('Gib deinen Namen ein: ')
+    name = input("Gib deinen Namen ein: ")
     name = Fore.CYAN + name + Fore.WHITE
-    print(f'Dein Name lautet nun {name}\n')
+    print(f"Dein Name lautet nun {name}\n")
     duesterer_wald = Story(player_name=name)
     duesterer_wald.first_choice()
 
