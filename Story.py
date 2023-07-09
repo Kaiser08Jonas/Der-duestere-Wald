@@ -111,7 +111,7 @@ class Story:
                 print()
                 print(f'[{self.player_name}] "Ich glaube, dass ich mir diese Hütte erst einmal von außen anschauen '
                       f'werde."\n'
-                      'Du gehst um die Hütte herum und entdeckst etwas furchtbares.\n'
+                      'Du gehst um die Hütte herum und entdeckst etwas Furchtbares.\n'
                       'Du gerätst in Panik und schreist laut auf!\n'
                       f'[{self.player_name}] "Ein Monster!!!"\n'
                       'Vor dir steht ein Monster, welches über 10 Meter groß ist.\n'
@@ -165,17 +165,17 @@ class Story:
         match answer:
             case "Norden":
                 print()
-                print(f'[{self.player_name}] "Bis auf einem Teppich und ein Bett ist der Raum vollkommen leer."\n'
+                print(f'[{self.player_name}] "Bis auf einen Teppich und ein Bett ist der Raum vollkommen leer."\n'
                       f'[{self.player_name}] "Beim Bett konnte ich nichts finden, was irgendeine Bedeutung haben '
                       f'könnte."\n'
                       f'[{self.player_name}] "Mal sehen, ob es beim Teppich etwas zu finden gibt."\n'
                       f'{self.player_name} findet auf den ersten Blick nichts. '
                       f'Doch als er gehen wollte, rutschte der Teppich etwas.\n'
-                      f'Er schob in zur Seite und sah einen kleinen Spalt im Boden.\n'
+                      f'Er schob ihn zur Seite und sah einen kleinen Spalt im Boden.\n'
                       f'[{self.player_name}] "Unter dem Teppich befindet sich eine Luke!"\n'
                       f'Als {self.player_name} die Luke öffnet, ist dort nur ein Loch nach unten. '
                       f'Doch plötzlich kommen dort Stufen aus der Wand gefahren.\n'
-                      f'[{self.player_name}]"Soll ich nach unten in Richtung {self.colored_north} gehen?'
+                      f'[{self.player_name}]"Soll ich nach unten in Richtung {self.colored_north} gehen?\n'
                       f'Vielleicht sollte ich wieder in den {self.colored_south} zurückgehen."')
                 answer = input('> ')
                 if answer == 'Norden':
@@ -195,9 +195,9 @@ class Story:
             case "Westen":
                 print()
                 print(f'[{self.player_name}] "In der Küche steht ein Tisch auf welchem noch Essen steht. Es ist '
-                      f'bestimmt schon seit Monaten her".\n'
+                      f'bestimmt schon seit Monaten hier".\n'
                       f'[{self.player_name}] "Zumindest schließe ich das aus den Kleintieren, die darauf sind."\n'
-                      f'[{self.player_name}] "Wer auch immer hier wohnte, muss wohl sehr überstürzt aufbrechen."\n'
+                      f'[{self.player_name}] "Wer auch immer hier wohnte, musste wohl sehr überstürzt aufbrechen."\n'
                       f'[{self.player_name}] "Sonst gibt es hier nichts, was mich noch interessieren könnte."')
                 self.inside_hut()
             case "Süden":
@@ -332,7 +332,7 @@ class Story:
         self.current_chapter = "Deeper in the Forest"
         print()
         print(
-            f'[{self.player_name}] "Dort vorne ist ein Licht. Es sieht aus wie das eines Lagerfeuer welches '
+            f'[{self.player_name}] "Dort vorne ist ein Licht. Es sieht aus wie das eines Lagerfeuer, welches '
             f'im {self.colored_south} brennt.'
             f'Dort ist doch bestimmt irgendjemand."\n'
             f'[{self.player_name}] "Allerdings könnte ich auch diesem Weg in den {self.colored_east} folgen. '
@@ -476,7 +476,7 @@ class Story:
                     print()
                     print(f'[{colored_name_mage}] "Ooohhh. Ich spüre die Anwesenheit meines {colored_spellbook}."\n'
                           f'Er öffnet die Tür, reißt dir das Buch aus den Händen und verschließt die Tür wieder.\n'
-                          f'als du schon wieder weg gehen wolltest, geht dir Tür wieder auf\n'
+                          f'Als du schon wieder weg gehen wolltest, geht dir Tür wieder auf\n'
                           f'[{colored_name_mage}] "Danke, dass du mir mein Buch zurückgebracht hast."')
                     self.inside_black_tower()
             case "Norden":
@@ -486,7 +486,7 @@ class Story:
                     f'Auf einmal kommt eine kleine Klippe. '
                     f'[{self.player_name}] "Ich kann weiter in den {self.colored_north} gehen und die Klippe hinunter '
                     f'springen."\n'
-                    f'[{self.player_name}] "Jedoch komme dann nicht mehr zurück zum Turm im {self.colored_south}."')
+                    f'[{self.player_name}] "Jedoch komme ich dann nicht mehr zurück zum Turm im {self.colored_south}."')
                 answer = input('> ')
                 if answer == 'Norden':
                     print()
@@ -515,7 +515,7 @@ class Story:
         colored_name_mage = Fore.MAGENTA + "Odiwandius" + Fore.WHITE
         print()
         print(f'[{colored_name_mage}]"Komm doch herein, dann können wir reden."\n'
-              f'[{colored_name_mage}]"Du willst vermutlich wissen, wie du aus dem Wald heraus kommst oder?\n'
+              f'[{colored_name_mage}]"Du willst vermutlich wissen, wie du aus dem Wald heraus kommst oder?"\n'
               f'[{self.player_name}] "Ja! Kannst du mir sagen wie?"\n'
               f'[{colored_name_mage}]"Es ist im Grunde ganz einfach. Folge dem {colored_whisper}"\n'
               f'[{self.player_name}] "Was meinst du genau damit?\n'
@@ -531,7 +531,7 @@ class Story:
         print('-----Das Lagerfeuer-----')
         print('Du hörst, wie sich zwei Eingeborene unterhalten\n'
               f'[{colored_jakobus}]"Uns geht so langsam das Essen aus."\n'
-              f'[{colored_tolloni}]"Jaja. Ähm was hast du gerade gesagt?"\n'
+              f'[{colored_tolloni}]"Jaja. Ähm, was hast du gerade gesagt?"\n'
               f'[{colored_jakobus}]"Hör doch wenigstens ein mal zu. UNS GEHT DAS ESSEN AUS!"\n'
               f'[{colored_tolloni}]"Dann müssen wir sofort neues beschaffen!"\n'
               f'[{colored_tolloni}]"Sieh nur da ist jemand"\n'
@@ -603,7 +603,7 @@ class Story:
         match answer:
             case "Osten":
                 print(f'[{self.player_name}] "Ich hoffe, es stimmt."\n'
-                      'Du folgst dem flüstern und stürzt dich die Klippe hinunter.')
+                      'Du folgst dem Flüstern und stürzt dich die Klippe hinunter.')
                 if not self.whisper:
                     print(
                         'Du fühlst dich bei dem Fall so frei, '
@@ -614,7 +614,7 @@ class Story:
                     print(
                         'Du fühlst dich bei dem Fall so frei, '
                         'dass du für einen Augenblick alle deine Sorgen vergisst,\n'
-                        f'[{self.player_name}] "Was passiert jetzt? Ich werde Sterben!"\n'
+                        f'[{self.player_name}] "Was passiert jetzt? Ich werde sterben!"\n'
                         'Kurz bevor du auf den Steinen aufkommst wirst du ohnmächtig.')
                     self.back_at_home()
                 else:
@@ -660,7 +660,7 @@ class Story:
 
     def back_at_home(self):
         self.current_chapter = "Back at Home"
-        print('Als du wieder zu dir kommst, bist du wieder an der Stelle, an welcher du das erste mal\n'
+        print('Als du wieder zu dir kommst, bist du wieder an der Stelle, an welcher du das erste Mal\n'
               'ohnmächtig geworden bist. Du läufst so schnell wie möglich nach Hause und denkst erst\n'
               'dort darüber nach, was eigentlich passiert ist.\n'
               f'[{self.player_name}] "War das alles nur ein Traum? Aber dafür hat es sich zu real angefühlt."\n'
